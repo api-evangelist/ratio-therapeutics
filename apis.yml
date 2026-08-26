@@ -1,8 +1,21 @@
 aid: ratio-therapeutics
 name: Ratio Therapeutics
-description: 'Ratio Therapeutics is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Ratio Therapeutics Inc. is a clinical-stage pharmaceutical company headquartered at One Design Center
+  Place in Boston, Massachusetts, developing next-generation precision radiopharmaceuticals for solid
+  tumors. Founded in 2022 by Jack Hoppin, Ph.D. and John Babich, Ph.D., the company pairs two proprietary
+  R&D platforms — Trillium, a tunable albumin-binding targeting scaffold that modulates pharmacokinetics,
+  and Macropa, a bifunctional chelator built for the alpha emitter actinium-225 — to improve drug
+  availability, tumor delivery and tumor loading. Its lead program, [Ac-225]RTX-2358, is a FAP-targeted
+  radiotherapeutic in the ATLAS Phase 1/2 trial, alongside a next-generation GRPR program, mono- and
+  bispecific radioligand therapies, and PET imaging assets. Ratio has licensing and collaboration
+  agreements with Novartis, Merck, Bayer and Lantheus, isotope supply agreements with Nusano, TerraPower
+  Isotopes and PanTera, and manufacturing partnerships with PharmaLogic and Eckert & Ziegler. It closed a
+  $70 million Series C in July 2026, bringing total capital raised past $240 million. Ratio is a
+  therapeutics developer rather than a software vendor: it publishes no developer program, no public API
+  and no machine-readable API contract.
 url: https://raw.githubusercontent.com/api-evangelist/ratio-therapeutics/refs/heads/main/apis.yml
+image: https://i0.wp.com/ratiotx.com/wp-content/uploads/2023/03/ratiologo_clr_sansblock.jpg?fit=1325%2C588&ssl=1
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +25,15 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Biotechnology
+- Pharmaceuticals
+- Life Sciences
+- Healthcare
+- Oncology
+- Radiopharmaceuticals
+- Drug Discovery
+- Clinical Trials
+- Precision Medicine
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +41,61 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/ratio-therapeutics-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://ratiotx.com/
+- type: Blog
+  url: https://ratiotx.com/blog/
+- type: News
+  url: https://ratiotx.com/news/
+- type: Support
+  url: https://ratiotx.com/contact-us/
+- type: Careers
+  url: https://ratiotx.com/careers/
+- type: GitHubOrganization
+  url: https://github.com/ratiotx
+- type: LinkedIn
+  url: https://www.linkedin.com/company/ratio-therapeutics/
+- type: LLMsTxt
+  url: llms/ratio-therapeutics-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Ratio Therapeutics is a clinical-stage radiopharmaceutical developer whose product is a drug
+    pipeline ([Ac-225]RTX-2358 and the Trillium/Macropa platforms); ratiotx.com is a twenty-page
+    WordPress.com marketing site where every contract-discovery path — /openapi.json, /swagger.json,
+    /v1/openapi.json, /api-docs, /docs, /redoc, /graphql — returns the theme's 404, the company's
+    GitHub organization at github.com/ratiotx has zero public repositories, and the only
+    machine-readable surface is the CMS's default, undocumented /wp-json/ endpoint rather than a
+    product API.
+  evidence:
+  - url: https://ratiotx.com/
+    status: 200
+  - url: https://ratiotx.com/openapi.json
+    status: 404
+  - url: https://ratiotx.com/swagger.json
+    status: 404
+  - url: https://ratiotx.com/api-docs
+    status: 404
+  - url: https://ratiotx.com/graphql
+    status: 404
+  - url: https://ratiotx.com/.well-known/api-catalog
+    status: 404
+  - url: https://ratiotx.com/.well-known/agent-card.json
+    status: 404
+  - url: https://ratiotx.com/.well-known/agent.json
+    status: 404
+  - url: https://ratiotx.com/llms.txt
+    status: 200
+  - url: https://ratiotx.com/wp-json
+    status: 200
+  - url: https://github.com/ratiotx
+    status: 200
+  checked: '2026-08-26'

@@ -1,0 +1,51 @@
+generated: '2026-08-26'
+method: probed
+source: >-
+  Direct unauthenticated HTTPS probes of every /.well-known/ path in the enrichment contract against
+  ratiotx.com, the only host Ratio Therapeutics operates. Every path returned HTTP 404 served by the
+  site's WordPress theme, so no pointer of type WellKnown or SecurityTxt is emitted — this file records
+  a verified absence, not a served surface.
+hosts:
+- host: ratiotx.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+hit_count: 0
+soft_404_control:
+  path: /this-path-should-not-exist-xyz
+  status: 404
+  bytes: 108403
+  note: >-
+    Control probe of a path that cannot exist returned the same WordPress 404 template at the same
+    approximate byte count as every /.well-known/ probe, confirming the host is not a catch-all
+    answering 200 and that every 404 above is a true negative.
+notes:
+  - >-
+    All 404 responses carried the WordPress 404 template (text/html, ~108KB), not a document.
+  - >-
+    No A2A agent card was found on either the canonical /.well-known/agent-card.json path or the legacy
+    /.well-known/agent.json path, so no a2a/ artifact was authored, per the search-only rule.
+  - >-
+    The only machine-readable surface on ratiotx.com is the WordPress core REST API at
+    https://ratiotx.com/wp-json (HTTP 200, 795 routes across 28 namespaces, application-password auth).
+    It is the CMS platform default shipped by WordPress.com/Jetpack, not a product API Ratio publishes,
+    advertises or documents, so it is recorded here as a finding and NOT registered as an apis[] entry.
